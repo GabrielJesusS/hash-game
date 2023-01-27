@@ -6,5 +6,76 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+   
+}
+
+html{
     font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+.modal-container{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.modal{
+    background-color: white;
+    padding: 4rem;
+    font-size: 2.4rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.winner{
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: rebeccapurple;
+}
+
+.container{
+    position: relative;
+    z-index: 10;
+}
+
+.page-header{
+
+}
+
+.page-title{
+
+}
+
+.menu-handler{
+
+}
+
+.button{
+    background: black;
+    color: white;
+    outline: transparent;
+    padding: 1.6rem 2.4rem;
+    font-size: 2.4rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+
+.button:hover{
+    background: red;
+
+}
+
+.game{
+    
 }
