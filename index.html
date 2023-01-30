@@ -8,38 +8,66 @@
     <title>Jogo da velha</title>
 </head>
 <body>
+    <div id="config" class="modal-container">
+        <div class="modal">
+            <div class="config-header">
+                <p>Configurações</p>
+                <button class="close-config" onclick="toggleConfig()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="fill: rgba(255, 0, 0, 1);transform: scaleX(-1);msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);"><path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path><path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path></svg></button>
+            </div>
+            <div class="config-holder">
+                <label for="player-1-color">
+                    Cor do jogador 1:
+                    <input id="p1-color" type="color"  value="">
+                </label>
+                <label for="player-2-color">
+                    Cor do jogador 2:
+                    <input id="p2-color" type="color"  value="">
+                </label>
+                <button class="button btn-green" onclick="setColors()">Confirmar</button>
+            </div>
+        </div>
+    </div>
     <div id="modal" class="modal-container">
         <div class="modal">
             <p>O jogo acabou!</p>
-            <p class="winner">Jogador 1 é o Vencedor</p>
-            <button class="button">Jogar novamente</button>
+            <p class="winner"><span id="winner-player"></span></p>
+            <button onclick="resetGame()" class="button btn-blue">Jogar novamente</button>
         </div>
     </div>
     <section class="container">
         <header class="page-header">
             <h1 class="page-title">Jogo da velha</h1>
             <div class="menu-handler">
-                <button onclick="" class="button" >Zerar pontos</button>
-                <button class="button">Reiniciar jogo</button>
+                <button onclick="resetPoints()" class="button btn-red" >Zerar pontos</button>
+                <button onclick="resetGame()" class="button btn-blue">Reiniciar jogo</button>
+                <button onclick="toggleConfig()" class="button btn-blue">Configurações</button>
             </div>
         </header>
         <div class="game">
-            <ol class="game-spaces">
-                <li><button onclick="setSpace(event)" class="hash-space"></button></li>
-                <li><button class="hash-space"></button></li>
-                <li><button class="hash-space"></button></li>
-                <li><button class="hash-space"></button></li>
-                <li><button class="hash-space"></button></li>
-                <li><button class="hash-space"></button></li>
-                <li><button class="hash-space"></button></li>
-                <li><button class="hash-space"></button></li>
-                <li><button class="hash-space"></button></li>
+            <ol class="game-spaces" id="game-spaces">
+                <li><button id="0" onclick="setSpace(event)" class="hash-space"></button></li>
+                <li><button id="1" onclick="setSpace(event)" class="hash-space"></button></li>
+                <li><button id="2" onclick="setSpace(event)" class="hash-space"></button></li>
+                <li><button id="3" onclick="setSpace(event)" class="hash-space"></button></li>
+                <li><button id="4" onclick="setSpace(event)" class="hash-space"></button></li>
+                <li><button id="5" onclick="setSpace(event)" class="hash-space"></button></li>
+                <li><button id="6" onclick="setSpace(event)" class="hash-space"></button></li>
+                <li><button id="7" onclick="setSpace(event)" class="hash-space"></button></li>
+                <li><button id="8" onclick="setSpace(event)" class="hash-space"></button></li>
             </ol>
         </div>
+        <div class="player-infos">
+            <small class="player-round">Vez do jogador: <span id="player-round"></span></small>
+            <div class="player-points">
+                <p>Vitórias jogador 1: <span id="player-1-points">0</span></p>
+                <p>Vitórias jogador 2: <span id="player-2-points">0</span></p>
+            </div>
+        </div>
     </section>
+  
 
 
-
+    <script src="symbols.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
